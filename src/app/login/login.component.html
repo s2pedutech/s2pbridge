@@ -1,0 +1,41 @@
+<div class="container">
+<form [formGroup]="loginForm" class="example-form">
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email"
+               [errorStateMatcher]="matcher">
+    <!--    <mat-hint>Errors appear instantly!</mat-hint>-->
+        <mat-error *ngIf="loginForm.controls.email.hasError('email') && !loginForm.controls.email.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="loginForm.controls.email.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password"
+               [errorStateMatcher]="matcher">
+    <!--    <mat-hint>Errors appear instantly!</mat-hint>-->
+        <mat-error *ngIf="loginForm.controls.password.hasError('email') && !loginForm.controls.password.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="loginForm.controls.password.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+        <div class="button-row">
+          <button routerLink='/dashboard' mat-raised-button color="accent">Login</button>
+          <button routerLink='/signup' mat-button color="accent">New User?</button>
+          
+        </div>
+        <div>
+            
+            <button routerLink='/forgotpwd' mat-button color="primary">Forgot Password?</button>
+        </div>
+    </div>
+</form>
+</div>

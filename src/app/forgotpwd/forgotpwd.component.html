@@ -1,0 +1,23 @@
+<div class="container">
+    <form [formGroup]="forgotForm" class="example-form">
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email"
+                   [errorStateMatcher]="matcher">
+        <!--    <mat-hint>Errors appear instantly!</mat-hint>-->
+            <mat-error *ngIf="forgotForm.controls.email.hasError('email') && !forgotForm.controls.email.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="forgotForm.controls.email.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+            <div class="button-row">
+              <button mat-raised-button color="accent">Email Password</button>
+              <button routerLink='/login' mat-button color="accent">Sign In</button>
+            </div>
+        </div>
+    </form>
+</div>

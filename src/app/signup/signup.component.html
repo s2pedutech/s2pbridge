@@ -1,0 +1,52 @@
+<div class="container">
+<form [formGroup]="signupForm" class="example-form">
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email"
+               [errorStateMatcher]="matcher">
+    <!--    <mat-hint>Errors appear instantly!</mat-hint>-->
+        <mat-error *ngIf="signupForm.controls.email.hasError('email') && !signupForm.controls.email.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="signupForm.controls.email.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Mobile Number" formControlName="email"
+               [errorStateMatcher]="matcher">
+    <!--    <mat-hint>Errors appear instantly!</mat-hint>-->
+        <mat-error *ngIf="signupForm.controls.mobno.hasError('email') && !signupForm.controls.mobno.hasError('required')">
+          Please enter a valid mobile number
+        </mat-error>
+        <mat-error *ngIf="signupForm.controls.mobno.hasError('required')">
+          Mobile Number is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password"
+               [errorStateMatcher]="matcher">
+    <!--    <mat-hint>Errors appear instantly!</mat-hint>-->
+        <mat-error *ngIf="signupForm.controls.password.hasError('email') && !signupForm.controls.password.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="signupForm.controls.password.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+        <div class="button-row">
+          <button mat-raised-button color="accent">Sign Up!</button>
+          <button routerLink='/signup' mat-button color="accent">Sign In</button>
+        </div>
+        <div>
+            <button routerLink='/forgotpwd' mat-button color="primary">Forgot Password?</button>
+        </div>
+    </div>
+</form>
+</div>

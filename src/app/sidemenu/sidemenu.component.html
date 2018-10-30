@@ -1,0 +1,68 @@
+<!--<mat-card class="demo-panel">-->
+<!--
+  <mat-card-title>
+    Angular Material Sidenav Demo
+  </mat-card-title>
+-->
+<!--  <mat-card-content>-->
+  <mat-toolbar color="warn" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">S2P Bridge</h1>
+      <h1 style="padding:10px;">C</h1>
+      <h1>Java</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav opened #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+<!--        <a (click)="showContent(i)" mat-list-item routerLink="." *ngFor="let nav of fillerNav;let i of index">{{nav}}</a>-->
+<!--          <a (click)="showContent(i)" mat-list-item *ngFor="let nav of fillerNav;let i of index">{{nav}}</a>-->
+          <a mat-list-item>Nav Item 1</a>
+          <a mat-list-item>Nav Item 2</a>
+          
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        
+        <div *ngFor="let l of lang[0].topics" class="container">
+            <mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{l.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Type your name and age
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+      <div *ngFor="let p of l.programs" class="container">
+          <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{p.name}}
+                  </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-tab-group>
+                  <mat-tab label="Explaination"> {{p.explaination}}</mat-tab>
+                  <mat-tab label="Code"> <pre><code highlight>
+                          {{p.code}}
+                          </code>
+                          </pre>
+                          </mat-tab>
+                  <mat-tab label="Video"> {{p.video}} </mat-tab>
+                  <mat-tab label="Examples">Exercizes</mat-tab>
+              </mat-tab-group>
+          </mat-expansion-panel>
+      </div>
+    
+  </mat-expansion-panel>
+</mat-accordion>
+        </div>
+        
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+<!--  </mat-card-content>-->
+<!--</mat-card>-->
